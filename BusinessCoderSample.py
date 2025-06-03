@@ -17,6 +17,7 @@ def business_coder_sample(license_key):
     business_coder.set_country("United States")
     # business_coder.set_cols("GrpAddressDetails,GrpBusinessCodes,Contacts")
 
+
     response = business_coder.get(str)
     response_object = business_coder.get(BusinessCoderResponse)
 

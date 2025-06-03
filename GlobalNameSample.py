@@ -3,6 +3,7 @@ from melissadatacloudapi.cloudapis.GlobalName import GlobalName
 from melissadatacloudapi.apiresponse import GlobalNameResponse
 from melissadatacloudapi.PostReqestBase import GlobalNamePostRequest
 
+
 def global_name_sample(license_key):
         """
         This function uses the Global Name Cloud API object to make a GET request
@@ -42,8 +43,6 @@ def global_name_sample(license_key):
             print(f"Gender2: {record.gender2}")
             print(f"Salutation: {record.salutation}")
             print(f"Extras: {record.extras}")
-
-
 
 def global_name_batch_1_sample(license_key):
     """

@@ -3,14 +3,20 @@ from melissadatacloudapi.cloudapis.GlobalEmail import GlobalEmail
 from melissadatacloudapi.apiresponse import GlobalEmailResponse
 from melissadatacloudapi.PostReqestBase import GlobalEmailPostRequest
 
+def time_test(license_key):
+    global_email = GlobalEmail(license_key)
+    global_email.set_email("info@melissa.com")
+
+    response = global_email.get(str)
+    return response
+
+
 def global_email_sample(license_key):
         """
         This function uses the Global Email Cloud API object to make a GET request
         """
         global_email = GlobalEmail(license_key)
         global_email.set_email("info@melissa.com")
-
-        global_email.set_value("email", "info@melissa.com")
 
         response = global_email.get(str)
 
