@@ -4,96 +4,20 @@ from melissadatacloudapi.apiresponse import ExpressEntryResponse
 
 
 
-def global_express_entry_sample(license_key):
+def test_global_express_entry_sample(license_key):
     """
     This function uses the Global Express Entry Cloud API object to make a GET request
     Multiple endpoints are tested
     """
     global_express_entry = GlobalExpressEntry(license_key)
-    global_express_entry.set_address_line_1("22382 Avenida Empresa")
-    global_express_entry.set_city("RSM")
-    global_express_entry.set_state("CA")
-    global_express_entry.set_postal("92688")
-
-    response = global_express_entry.get_express_address(str)
-    response_object = global_express_entry.get_express_address(ExpressEntryResponse)
-
-    print(response)
-
-    print(f"\nVersion: {response_object.version}")
-    print(f"ResultCode: {response_object.result_code}")
-    print(f"ErrorString: {response_object.error_string}\n")
-
-    for record in response_object.results:
-        address = record.address
-        print(f"Address: \n"
-              f"  AddressLine1: {address.address_line_1}\n"
-              f"  City: {address.city}\n"
-              f"  CityAccepted: {address.city_accepted}\n"
-              f"  State: {address.state}\n"
-              f"  PostalCode: {address.postal_code}\n"
-              f"  CountrySubdivisionCode: {address.country_subdivision_code}\n"
-              f"  AddressKey: {address.address_key}\n"
-              f"  SuiteCount: {address.suite_count}\n"
-              f"  Plus4: {address.plus_four[0] if address.plus_four else ''}\n"
-              f"  MAK: {address.mak}\n")
-
-    global_express_entry.clear()
-
-    global_express_entry.set_city("RSM")
-    global_express_entry.set_state("CA")
-
-    response = global_express_entry.get_express_city_state(str)
-    response_object = global_express_entry.get_express_city_state(ExpressEntryResponse)
-
-    print(response)
-
-    print(f"\nVersion: {response_object.version}")
-    print(f"ResultCode: {response_object.result_code}")
-    print(f"ErrorString: {response_object.error_string}\n")
-
-    for record in response_object.results:
-        address = record.address
-        print(f"Address: \n"
-              f"  City: {address.city}\n"
-              f"  CityAccepted: {address.city_accepted}\n"
-              f"  State: {address.state}\n"
-              f"  PostalCode: {address.postal_code}\n"
-              f"  CountrySubdivisionCode: {address.country_subdivision_code}\n"
-              f"  SuiteCount: {address.suite_count}\n"
-              )
-
-    global_express_entry.clear()
-
-    global_express_entry.set_postal("92688")
-
-    response = global_express_entry.get_express_postal_code(str)
-    response_object = global_express_entry.get_express_postal_code(ExpressEntryResponse)
-
-    print(response)
-
-    print(f"\nVersion: {response_object.version}")
-    print(f"ResultCode: {response_object.result_code}")
-    print(f"ErrorString: {response_object.error_string}\n")
-
-    for record in response_object.results:
-        address = record.address
-        print(f"Address: \n"
-              f"  City: {address.city}\n"
-              f"  CityAccepted: {address.city_accepted}\n"
-              f"  State: {address.state}\n"
-              f"  PostalCode: {address.postal_code}\n"
-              f"  CountrySubdivisionCode: {address.country_subdivision_code}\n"
-              f"  SuiteCount: {address.suite_count}\n"
-              )
 
     global_express_entry.clear()
 
     global_express_entry.set_address_line_1("Avenida")
     global_express_entry.set_postal("92688")
 
-    response = global_express_entry.get_express_street(str)
-    response_object = global_express_entry.get_express_street(ExpressEntryResponse)
+    response = global_express_entry.get_global_express_thoroughfare(str)
+    response_object = global_express_entry.get_global_express_thoroughfare(ExpressEntryResponse)
 
     print(response)
 
